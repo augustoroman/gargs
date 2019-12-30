@@ -1,0 +1,43 @@
+{
+  "name": "gargs",
+  "version": "1.0.0",
+  "description": "A small args parsing library.",
+  "homepage": "https://github.com/augustoroman/gargs/",
+  "author": "Augusto Roman",
+  "license": "MIT",
+  "types": "lib/index.d.ts",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^0.1.3",
+    "@types/jasmine": "^3.5.0",
+    "@types/node": "^10.12.18",
+    "@typescript-eslint/eslint-plugin": "^1.7.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^1.7.0",
+    "@typescript-eslint/parser": "^1.7.0",
+    "eslint": "^5.16.0",
+    "jasmine": "^3.5.0",
+    "nyc": "^14.1.1",
+    "source-map-support": "^0.5.16",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.3"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "test": "ts-node node_modules/jasmine/bin/jasmine spec/*-spec.ts",
+    "coverage": "nyc -r html -r text -e .ts npm run test"
+  },
+  "nyc": {
+    "extends": "@istanbuljs/nyc-config-typescript",
+    "include": [
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      "spec/**/*-spec.ts",
+      "lib/**/*"
+    ]
+  }
+}

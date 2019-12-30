@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    // Reference: https://www.typescriptlang.org/docs/handbook/compiler-options.html
+    "target": "ES2017", // ES2017 allows async/await
+    "module": "commonjs",
+    "outDir": "./lib/",
+    "strict": true,
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true, // allows `import fs from 'fs'` instead of `import * as fs from 'fs'`,
+    "inlineSourceMap": true
+  },
+  "include": [
+    "src/**/*",
+  ],
+  "exclude": [
+    "node_modules",
+  ],
+}
